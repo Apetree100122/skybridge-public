@@ -15,13 +15,10 @@ jobs:
       packages: read
       actions: read
       contents: read
-    strategy:
+      strategy:
       fail-fast: false
-      matrix:
-        include:
-        # your codebase is analyzed, see https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/codeql-code-scanning-for-compiled-languages
-    steps:
-    - name: Checkout repository
+      matrix: 
+      - name: Checkout repository
       uses: actions/checkout@v4
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
